@@ -47,7 +47,7 @@ def read_json_data():
         return raw_data
 
     except ValueError:
-        print "Could not parse JSON!"
+        print ("Could not parse JSON!")
         return {"resources": [], "subjects": []}
 
 
