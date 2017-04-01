@@ -3,5 +3,23 @@
 {% block body %}
 <h1>Welcome to The Teaching Tree!</h1>
 
+<p>The Teaching Tree can help you learn about any of the following subjects.  Once you pick a subject, answer two questions we'll try to recommend a good resource for you!  If you don't like it, come back and tell us why, and we'll try to recommend another one.</p>
+
+<form action="/learn">
+    <p> Enter a subject here: <input type="text" name="subject"></p>
+    <p> Or pick one: <select>
+        {% for subject in subjects %}
+        <option name="subject" value="{{ subject }}">
+        {% endfor %}
+    </p>
+    <p><input type="submit" value="I want to learn!"></p>
+</form>
+
+All subjects available:
+<ul>
+    {% for subject in subjects %}
+    <li> {{ subject }} </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
