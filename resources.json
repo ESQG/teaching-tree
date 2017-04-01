@@ -1,0 +1,36 @@
+{
+    "subjects":
+    [ "programming",
+      "history",
+    ],
+   "resources": 
+    { "programming": [
+        {"url": "https://www.youtube.com/watch?v=dwVAR6HClmI",
+        "medium": "video",
+        "computer_languages": ["BASIC"],
+        },
+
+        {
+        "url": "https://www.amazon.com/dp/0513017178/ref=dp_bookdescription?_encoding=UTF8&n=283155",
+        "medium": "book",
+        "free": "no",
+        "computer_languages": [],
+        },
+
+        {
+        "url": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/",
+        "medium": "course",
+        "computer_languages": ["Python"],
+        "free": "yes",
+        },
+
+        {
+        "url": "https://www.coursera.org/learn/intro-programming",
+        "medium": "course",
+        "computer_languages": ["Scratch"],
+        "free": "you can audit some videos and course content",
+        }
+        ],
+    "history": []
+    },  
+}
