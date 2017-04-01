@@ -8,11 +8,11 @@
     <ul>
     {% for resource in resources %}
     <li>
-        <a href="{{ resource['url'] }}">{{ resource['medium'] }}: {{ resource['computer_language']}}</a></li>
+        <a href="{{ resource.url }}">{{ resource.medium }}{% if resource.title %} : {{ resource.title }} {% endif %}</a></li>
 
     {% endfor %}
 </ul>
     {% else %}
-    Oops, our list of resources is empty.  Please come back later or, if you can, <a href="/suggest">make a suggestion</a>!
+    Oops, our list of resources is empty.  Please come back later or, if you can, <a href="/suggest/{{ subject }}">make a suggestion</a>!
     {% endif %}
 {% endblock %}

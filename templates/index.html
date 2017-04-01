@@ -7,9 +7,9 @@
 
 <form action="/learn">
     <p> Enter a subject here: <input type="text" id="text-subject" name="subject"></p>
-    <p> Or pick one: <select id="select-subject">
+    <p> Or pick one: <select id="select-subject" name="select-subject">
         {% for subject in subjects %}
-        <option name="select-subject" value="{{ subject }}">{{ subject }}</option>
+        <option value="{{ subject }}">{{ subject }}</option>
         {% endfor %}
         <select>
     </p>

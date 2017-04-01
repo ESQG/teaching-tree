@@ -5,11 +5,36 @@
 
 I'm sorry, we don't currently have any resources on {{ subject }}.  If you fill out the suggestion box below, we can try to fix that!
 
-<form>
-<p>Subject: <input type="text" name="subject" value="{{ subject }}"></p>
-<p>Resources (if any):
-<input type="text"></p>
+<form action="/add-resource" method="POST">
+<p>Submit information to us about a new resource!</p>
+<p>Subject field is required, all other fields are optional.</p>
+<ul>
+<li>Subject: <input type="text" name="subject" value="{{ subject }}" required></li>
+<li>Give this resource a title: <input type="text" name="title">
+</li>
 
+<li>Link (URL) to resource online: <input type="url" name="link"></li>
+<li>Estimated reading level: 
+    <select name="reading-level">
+        {% for level in audiences %}
+        <option value="{{ level.rank }}">{{ level.name }}</option>
+        {% endfor %}
+    </select>
+</li>
+<li>Language: 
+    <select name="language">
+    {% for language in languages %}
+        <option value="{{language.language_code}}">{{language.name}}</option>
+    {% endfor %}
+</select>
+</li>
+<li>Subject detail: for example, if the subject is "programming", what programming language is primarily taught?
+<input type="text" name="subject-detail"></li>
+
+<li>Medium: <input type="text" name="medium">
+<li>Notes: <input type="textarea" name="notes">
+
+<p><input type="submit"></p>
     </form>
 
 {% endblock %}
