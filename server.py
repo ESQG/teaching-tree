@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, jsonify
 import os
 import sys
 import json
@@ -11,7 +11,8 @@ app.secret_key = SECRET_KEY
 
 @app.route("/")
 def home_page():
-    return render_template('index.html')
+    data = read_json_data()
+    return render_template('index.html', subjects=data['subjects'])
 
 @app.route("/about")
 def about_us():
@@ -19,7 +20,9 @@ def about_us():
 
 @app.route("/learn")
 def learn():
-    subject = request.args.get('subject').lower()   # Makes it lowercase
+    subject = request.args.get('subject').strip().lower()   # Makes it lowercase
+    if not subject:
+        subject = request.args.get('select-subject')
 
     data = read_json_data()
     if subject in data['subjects']:
@@ -33,12 +36,18 @@ def suggest(subject):
 
 
 
+@app.route("/test.json")
+def show_data():
+    return jsonify(json.load(open("resources.json")))
 
 
 def read_json_data():
     try:
         raw_data = json.load(open("resources.json"))
+        return raw_data
+
     except ValueError:
+        print "Could not parse JSON!"
         return {"resources": [], "subjects": []}
 
 

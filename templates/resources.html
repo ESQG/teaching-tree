@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Resources on {{ subject }}</h1>
+
+<h2>All resources we currently have:</h2>
+    {% if resources %}
+    <ul>
+    {% for resource in resources %}
+    <li>
+        <a href="{{ resource['url'] }}">{{ resource['medium'] }}: {{ resource['computer_language']}}</a></li>
+
+    {% endfor %}
+</ul>
+    {% else %}
+    Oops, our list of resources is empty.  Please come back later or, if you can, <a href="/suggest">make a suggestion</a>!
+    {% endif %}
+{% endblock %}
