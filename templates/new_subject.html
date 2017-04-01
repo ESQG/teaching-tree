@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1> {{ subject }} </h1>
+
+I'm sorry, we don't currently have any resources on {{ subject }}.  If you fill out the suggestion box below, we can try to fix that!
+
+<form>
+<p>Subject: <input type="text" name="subject" value="{{ subject }}"></p>
+<p>Resources (if any):
+<input type="text"></p>
+
+    </form>
+
+{% endblock %}
