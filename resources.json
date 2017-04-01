@@ -16,5 +16,6 @@
     "free": "you can audit some videos and course content"}
 
     ], 
-    "history": []}
+    "history": []},
+    "languages": [{"english": "I speak English", "french": "Je parle français", "mandarin": "我会中文（简体字）"}]
 }
