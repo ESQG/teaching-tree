@@ -8,6 +8,14 @@
     </head>
 
     <body>
+{% if get_flashed_messages() %}
+<div class="container-fluid" id="flash">
+    {% for msg in get_flashed_messages() %}
+    <p>{{ msg }}</p>
+  {% endfor %}
+</div>
+{% endif %}
+        
         <div class="container-fluid" id="main-body">
         {% block body %}
         This message means you are displaying the raw template instead of the correct page.
