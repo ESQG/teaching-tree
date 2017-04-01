@@ -10,10 +10,13 @@
     <body>
         <div class="container-fluid" id="main-body">
         {% block body %}
-
+        This message means you are displaying the raw template instead of the correct page.
         {% endblock %}
-        <p class="col-xs-2 col-offset-5"><a href="/">Home</a></p>
-    </div>
+        </div>
+        <br>
+        <div class="container" id="base-body">
+        <a class="col-xs-6" href="/">Home</a> <a class="col-xs-6" href="/about/">About</a>
+        </div>
     </body>
 
 

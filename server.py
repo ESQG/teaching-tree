@@ -12,7 +12,9 @@ app.secret_key = SECRET_KEY
 def home_page():
     return render_template('index.html')
 
-
+@app.route("/about/")
+def about_us():
+    return render_template('about_us.html')
 
 
 if __name__ == '__main__':
