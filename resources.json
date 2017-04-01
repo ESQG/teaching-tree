@@ -12,10 +12,8 @@
 
     {"url": "https://www.coursera.org/learn/intro-programming", 
     "computer_language": "Scratch", "medium": "course", 
-
     "free": "you can audit some videos and course content"}
-
     ], 
     "history": []},
-    "languages": [{"english": "I speak English", "french": "Je parle français", "mandarin": "我会中文（简体字）"}]
+    "languages": {"english": "I speak English", "french": "Je parle français", "mandarin": "我会中文（简体字）"}
 }
