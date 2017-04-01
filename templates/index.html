@@ -23,4 +23,18 @@ All subjects available:
     {% endfor %}
 </ul>
 
+<script>
+var textFeild = document.getElementById("text-subject");
+var textSpace = document.getElementById("select-subject");
+
+textSpace.onchange = function(){
+
+textFeild.value = textSpace.value;
+
+
+};
+
+</script>
+
 {% endblock %}
+
